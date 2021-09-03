@@ -17,7 +17,7 @@ CREATE TABLE users
     user_first_name TEXT,
     user_last_name TEXT,
     user_email TEXT NOT NULL,
-    password VARCHAR(20) NOT NULL,
+    user_password VARCHAR(20) NOT NULL,
     pref_region INTEGER REFERENCES regions ON DELETE SET NULL
 );
 
@@ -32,7 +32,7 @@ CREATE TABLE posts
     id SERIAL PRIMARY KEY,
     post_title TEXT,
     post_text TEXT,
-    location TEXT,
+    post_location TEXT,
     user_id INTEGER REFERENCES users ON DELETE CASCADE,
     region_id INTEGER REFERENCES regions ON DELETE SET NULL,
     category_id INTEGER REFERENCES categories ON DELETE SET NULL
@@ -45,7 +45,7 @@ VALUES
 ('Midatlantic'),
 ('Europe');
 
-INSERT INTO users (username, user_email, password, pref_region)
+INSERT INTO users (username, user_email, user_password, pref_region)
 VALUES
 ('lita', 'lita@yahoo.com', 'monkeys', 1),
 ('boo', 'booboo@ghost.com', 'dogs', 1),
