@@ -42,7 +42,7 @@ CREATE TABLE passenger_seats
 (
   id SERIAL PRIMARY KEY,
   seat_number VARCHAR(4) NOT NULL,
-  pass_id INTEGER REFERENCES passengers ON DELETE SET NULL,
+  passenger_id INTEGER REFERENCES passengers ON DELETE SET NULL,
   flight_id INTEGER REFERENCES passengers ON DELETE SET NULL
 )
 
